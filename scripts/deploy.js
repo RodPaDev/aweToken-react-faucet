@@ -6,13 +6,13 @@ async function main() {
 
   console.log('Deploying contracts with the account:', deployer.address)
 
-  const DevTokenFacotry = await hre.ethers.getContractFactory('DevToken')
-  const devToken = await DevTokenFacotry.deploy('DevToken', 'DEVT')
+  const tokenFactory = await hre.ethers.getContractFactory('Awesome Source Token')
+  const aweToken = await tokenFactory.deploy('Awesome Source Token', 'AWE')
 
-  await devToken.deployed()
+  await aweToken.deployed()
 
-  console.log('Token deployed to:', devToken.address)
-  await updateDotenv({ REACT_APP_TOKEN_ADDRESS: devToken.address }).then(
+  console.log('Token deployed to:', aweToken.address)
+  await updateDotenv({ REACT_APP_TOKEN_ADDRESS: aweToken.address }).then(
     (env, err) => {
       return err ? console.log('err!', err) : console.log('Done!', env)
     }
