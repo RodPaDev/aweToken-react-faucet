@@ -22,11 +22,14 @@ module.exports = {
   solidity: "0.8.4",
   networks: {
     hardhat: {
-      chainId: 1337
+      chainId: 69420, // changed this to connect to metamsk easier
+      accounts:{
+        count: 3,
+        accountsBalance: "10000000000000000000"
+      }
     },
   },
   paths: {
     artifacts: './src/artifacts',
   },
-
 };
