@@ -27,3 +27,7 @@ export const metaMaskToken = async ({
     console.log(error)
   }
 }
+
+export const requestAccount = async () => {
+  return await window.ethereum.request({ method: 'eth_requestAccounts' })
+}
