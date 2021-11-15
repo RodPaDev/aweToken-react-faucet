@@ -1,9 +1,15 @@
-const SVGEye = ({ width = 24, height = 24, strokeWidth = 2, ...props }) => {
+const CheckmarkCircle = ({
+  width = 24,
+  height = 24,
+  strokeWidth = 2,
+  ...props
+}) => {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
       width={width}
       height={height}
+      viewBox='0 0 24 24'
       fill='none'
       stroke='currentColor'
       strokeWidth={strokeWidth}
@@ -11,10 +17,10 @@ const SVGEye = ({ width = 24, height = 24, strokeWidth = 2, ...props }) => {
       strokeLinejoin='round'
       {...props}
     >
-      <path d='M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z' />
-      <circle cx={12} cy={12} r={3} />
+      <path d='M22 11.08V12a10 10 0 11-5.93-9.14' />
+      <path d='M22 4L12 14.01l-3-3' />
     </svg>
   )
 }
 
-export default SVGEye
+export default CheckmarkCircle
