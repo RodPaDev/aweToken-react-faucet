@@ -11,6 +11,7 @@
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
     "chai": "^4.3.4",
+    "debounce": "^1.2.1",
     "ethereum-waffle": "^3.4.0",
     "ethers": "^5.5.1",
     "hardhat": "^2.6.8",
@@ -18,14 +19,17 @@
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
     "update-dotenv": "^1.1.1",
-    "web-vitals": "^1.1.2"
+    "web-vitals": "^1.1.2",
+    "web3": "^1.6.0"
   },
   "scripts": {
+    "start:dev": "npm run deploy && craco start",
     "start": "craco start",
     "build": "craco build",
     "test": "craco test",
     "eject": "react-scripts eject",
-    "deploy": "npx hardhat run scripts/deploy.js --network localhost",
+    "deploy:dev": "npx hardhat run scripts/deploy.js --network localhost",
+    "deploy:ropsten": "npx hardhat run scripts/deploy.js --network ropsten",
     "compile": "npx hardhat compile"
   },
   "eslintConfig": {
