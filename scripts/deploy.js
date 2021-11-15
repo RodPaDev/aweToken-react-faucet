@@ -6,8 +6,8 @@ async function main() {
 
   console.log('Deploying contracts with the account:', deployer.address)
 
-  const tokenFactory = await hre.ethers.getContractFactory('Awesome Source Token')
-  const aweToken = await tokenFactory.deploy('Awesome Source Token', 'AWE')
+  const tokenFactory = await hre.ethers.getContractFactory('AweToken')
+  const aweToken = await tokenFactory.deploy('AweToken', 'AWE')
 
   await aweToken.deployed()
 
