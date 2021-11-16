@@ -15,15 +15,13 @@ const Balance = ({ tokenContract, symbol, tokenAddress, ...props }) => {
     if (typeof window.ethereum !== 'undefined') {
       const [account] = await requestAccount()
       const provider = new ethers.providers.Web3Provider(window.ethereum)
-      console.log(tokenAddress, tokenContract)
+
       const contract = new ethers.Contract(
         tokenAddress,
         tokenContract.abi,
         provider
       )
-      console.log(account)
       const balance = await contract.balanceOf(account)
-      console.log('Balance: ', balance.toString())
       setBalance(balance.toString())
       setShowBalance(true)
     }

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { ethers } from 'ethers'
 import { requestAccount } from '../utils'
 import { debounce } from 'debounce'
@@ -19,10 +19,6 @@ const TransferToken = ({ tokenContract, tokenAddress, symbol }) => {
     'erc20-address': false
   })
   const [transactionOk, setTransactionOk] = useState(null)
-
-  useEffect(() => {
-    console.log(transactionOk)
-  }, [transactionOk])
 
   const onTransferToken = async () => {
     try {
@@ -64,7 +60,6 @@ const TransferToken = ({ tokenContract, tokenAddress, symbol }) => {
 
   const debounceValidation = debounce(address => {
     let isValid = Web3.utils.isAddress(address)
-    console.log(isValid)
     setIsAddressValid(isValid)
   }, 1000)
 
